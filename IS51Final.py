@@ -45,6 +45,30 @@ if __name__ == "__main__":
 
 """
 
+def calculate_percent_above_average(ll, avg):
+    cnt = 0
+    for a in ll:
+        if(a > avg):
+            cnt += 1
+    return ((cnt/len(ll))*100)
 
+
+if __name__ == "__main__":
+
+    f = open("Final.txt", "r")
+    l = f.read().split("\n")
+    ll = []
+    for a in l:
+        if(a != ''):
+            ll.append(int(a))
+    print("Number of grades : ", len(ll))
+
+    avg = 0
+    for a in ll:
+        avg += a
+    avg = avg/len(ll)
+    print("Average of grades : ", avg)
+    print("Percentage of grades above average: ",
+          calculate_percent_above_average(ll, avg), "%")
 
 
